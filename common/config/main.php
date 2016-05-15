@@ -16,6 +16,7 @@ return [
             'currencyCode' => 'CNY',
         ],
 
+        'db' => dirname(__DIR__).'/db.php',
 
         'cache' => [
             'class' => 'yii\caching\FileCache',
