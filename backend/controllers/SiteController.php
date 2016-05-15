@@ -6,6 +6,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\User;
 
 /**
  * Site controller
@@ -55,7 +56,17 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $data['user_count'] = User::find()->count();
+        $data['post_count'] = 0;
+        $data['product_count'] = 0;
+        $data['order_count'] = 0;
+
+        $data['orders'] = [];
+
+        $data['users'] = [];
+
+
+        return $this->render('index',$data);
     }
 
     public function actionLogin()
