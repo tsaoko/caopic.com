@@ -16,6 +16,10 @@ use Yii;
  */
 class UserAccount extends \yii\db\ActiveRecord
 {
+
+    public $modelName = '用户第三方账号';
+
+
     /**
      * @inheritdoc
      */
@@ -51,4 +55,10 @@ class UserAccount extends \yii\db\ActiveRecord
             'created_at' => '授权时间',
         ];
     }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(),['user_id'=>'id']);
+    }
+
 }

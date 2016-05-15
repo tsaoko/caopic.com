@@ -3,24 +3,24 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\User;
+use common\models\UserAccount;
 use yii\data\ActiveDataProvider;
 use backend\components\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
- * UserController implements the CRUD actions for User model.
+ * UseraccountController implements the CRUD actions for UserAccount model.
  */
-class UserController extends Controller
+class UseraccountController extends Controller
 {
     /**
-     * Lists all User models.
+     * Lists all UserAccount models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => User::find(),
+            'query' => UserAccount::find(),
         ]);
 
         return $this->render('index', [
@@ -29,7 +29,7 @@ class UserController extends Controller
     }
 
     /**
-     * Displays a single User model.
+     * Displays a single UserAccount model.
      * @param integer $id
      * @return mixed
      */
@@ -41,7 +41,34 @@ class UserController extends Controller
     }
 
     /**
-     * Updates an existing User model.
+     * Creates a new UserAccount model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
+        $model = new UserAccount();
+        $model->loadDefaultValues();
+
+        if(Yii::$app->request->isPost)
+        {
+            $model->load(Yii::$app->request->post());
+            // 取消注释来上传文件/图片
+            // $model->uploadFiles(['attach']);
+            // $model->uploadImages(['image']);
+
+            if (!$model->hasErrors() && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Updates an existing UserAccount model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -68,7 +95,7 @@ class UserController extends Controller
     }
 
     /**
-     * Deletes an existing User model.
+     * Deletes an existing UserAccount model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -81,15 +108,15 @@ class UserController extends Controller
     }
 
     /**
-     * Finds the User model based on its primary key value.
+     * Finds the UserAccount model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return User the loaded model
+     * @return UserAccount the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = User::findOne($id)) !== null) {
+        if (($model = UserAccount::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

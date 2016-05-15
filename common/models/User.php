@@ -38,6 +38,12 @@ class User extends ActiveRecord implements IdentityInterface
     ];
 
 
+    public function getStatusValue()
+    {
+        $arr = self::$status_list;
+        return $arr[$this->status];
+    }
+
 
     /**
      * @inheritdoc
@@ -86,6 +92,7 @@ class User extends ActiveRecord implements IdentityInterface
             'auth_key' => 'Auth Key',
             'access_token' => 'Access Token',
             'status' => '状态',
+            'statusValue' => '状态',
             'role' => '角色',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',

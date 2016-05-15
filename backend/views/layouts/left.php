@@ -19,6 +19,8 @@
 
             'people' => [
                 ['label' => '用户列表','icon' => 'fa fa-user', 'url' => ['/user/index']],
+                ['label' => '用户信息列表','icon' => 'fa fa-user', 'url' => ['/userinfo/index']],
+                ['label' => '第三方账号列表','icon' => 'fa fa-user', 'url' => ['/useraccount/index']],
             ],
 
             'content' => [
