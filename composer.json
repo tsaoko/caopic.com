@@ -25,7 +25,8 @@
         "filsh/yii2-oauth2-server": "*",
         "yiidoc/yii2-redactor": "*",
         "creocoder/yii2-nested-sets": "0.9.*",
-        "creocoder/yii2-taggable": "~2.0"
+        "creocoder/yii2-taggable": "~2.0",
+        "dmstr/yii2-adminlte-asset": "2.*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

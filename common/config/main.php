@@ -3,6 +3,7 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'timeZone' => 'Asia/Shanghai',
     'language' => 'zh-CN',
+    'name' => '草皮网',
 
     'components' => [
 
