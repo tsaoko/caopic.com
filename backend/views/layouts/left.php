@@ -7,9 +7,6 @@
         $headerBars = [
             'system' => '系统',
             'people' => '',
-            'content' => '内容',
-            'config' => '配置',
-
         ];
 
         $slidebars = [
@@ -20,37 +17,29 @@
             'people' => [
                 [
                     'label' => '用户管理',
-                    'icon' => 'fa fa-circle-o',
+                    'icon' => 'fa fa-users',
                     'url' => ['/user/index'],
                     'items' => [
                         ['label' => '用户列表','icon' => 'fa fa-users', 'url' => ['/user/index']],
-                        ['label' => '用户信息列表','icon' => 'fa fa-info-circle', 'url' => ['/userinfo/index']],
-                        ['label' => '第三方账号列表','icon' => 'fa fa-user', 'url' => ['/useraccount/index']],
-                        ['label' => '用户头像列表','icon' => 'fa fa-user', 'url' => ['/useravatar/index']],
+                        ['label' => '用户信息列表','icon' => 'fa fa-file-text-o', 'url' => ['/userinfo/index']],
+                        ['label' => '第三方账号列表','icon' => 'fa fa-list-ol', 'url' => ['/useraccount/index']],
+                        ['label' => '用户头像列表','icon' => 'fa fa-image', 'url' => ['/useravatar/index']],
                     ]
                 ],
+                ['label' => '资源列表','icon' => 'fa fa-cube', 'url' => ['/resource/index']],
                 [
                     'label' => '分享管理',
-                    'icon' => 'fa fa-circle-o',
+                    'icon' => 'fa fa-share-alt',
                     'url' => ['/share/index'],
                     'items' => [
-                        ['label' => '分享列表','icon' => 'fa fa-users', 'url' => ['/share/index']],
-                        ['label' => '优质站点列表','icon' => 'fa fa-info-circle', 'url' => ['/website/index']],
+                        ['label' => '分享列表','icon' => 'fa fa-share-alt', 'url' => ['/share/index']],
+                        ['label' => '分享分组列表','icon' => 'fa fa-object-group', 'url' => ['/sharegroup/index']],
+                        ['label' => '分享标签列表','icon' => 'fa fa-tags', 'url' => ['/sharetags/index']],
+                        ['label' => '优质站点列表','icon' => 'fa fa-sitemap', 'url' => ['/website/index']],
                     ]
                 ],
 
             ],
-
-            'content' => [
-
-            ],
-
-
-            'config' => [
-                ['label' => '自定义配置','icon' => 'fa fa-cog', 'url' => ['/setting']],
-
-            ],
-
         ];
 
 
