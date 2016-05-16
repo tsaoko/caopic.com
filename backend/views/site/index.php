@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="info-box bg-green">
             <span class="info-box-icon"><i class="fa fa-home"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">发布文章数量（条）</span>
+                <span class="info-box-text">上传资源（条）</span>
                 <span class="info-box-number"><?=$post_count;?></span>
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="info-box bg-yellow">
             <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">商品记录数（条）</span>
+                <span class="info-box-text">分享次数（条）</span>
                 <span class="info-box-number"><?=$product_count;?></span>
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
@@ -57,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="info-box bg-red">
             <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">订单数量（条）</span>
+                <span class="info-box-text">分组（条）</span>
                 <span class="info-box-number"><?=$order_count;?></span>
                 <div class="progress">
                     <div class="progress-bar" style="width: 70%"></div>
