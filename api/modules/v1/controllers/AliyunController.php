@@ -121,7 +121,7 @@ class AliyunController extends ActiveController
             $model->save(false);
 
             $data = ["Status"=>"Ok"];
-            echo $data;
+            return $data;
         }
         else
         {
