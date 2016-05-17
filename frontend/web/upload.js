@@ -26,7 +26,7 @@ function send_request()
 
     if (xmlhttp!=null)
     {
-        serverUrl = '/site/get';
+        serverUrl = 'http://api.hb10.com/v1/aliyun/signature';
         xmlhttp.open( "GET", serverUrl, false );
         xmlhttp.send( null );
         return xmlhttp.responseText
