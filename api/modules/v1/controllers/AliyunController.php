@@ -33,7 +33,7 @@ class AliyunController extends ActiveController
     public function actionSignature()
     {
         $oss = \Yii::$app->oss;
-        $callbackUrl = Url::to(['/aliyun/osscallback'],true);
+        $callbackUrl = Url::to(['/v1/aliyun/osscallback'],true);
         $response = $oss->getSignature('user-dir/', $callbackUrl,300);
         return $response;
     }
