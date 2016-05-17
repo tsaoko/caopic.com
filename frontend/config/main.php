@@ -21,7 +21,7 @@ return [
             'targets' => [
              'file' => [
                  'class' => 'yii\log\FileTarget',
-                 'levels' => ['trace', 'info'],
+                 'levels' => ['trace', 'info','error'],
                  'categories' => ['yii\*'],
              ],
              'email' => [
