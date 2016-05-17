@@ -111,7 +111,7 @@ class OSS extends Component
 
         $callback_param = [
             'callbackUrl' => $callbackUrl,
-             'callbackBody' => 'filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}',
+             'callbackBody' => 'bucket=${bucket}&filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}&format=${imageInfo.format}',
              'callbackBodyType' => "application/x-www-form-urlencoded"
          ];
         $callback_string = json_encode($callback_param);

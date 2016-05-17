@@ -7,6 +7,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\helpers\Url;
 use common\helpers\UtilHelper;
+use common\models\Resource;
 
 /**
  * Site controller
@@ -69,7 +70,9 @@ class SiteController extends Controller
     {
         $this->enableCsrfValidation = false;
 
-        Yii::info('callback:'.var_dump(Yii::$app->request->post,true));
+        
+
+
     }
 
 
