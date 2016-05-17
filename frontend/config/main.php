@@ -18,18 +18,26 @@ return [
             'enableAutoLogin' => true,
         ],
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
+             'file' => [
+                 'class' => 'yii\log\FileTarget',
+                 'levels' => ['trace', 'info'],
+                 'categories' => ['yii\*'],
+             ],
+             'email' => [
+                 'class' => 'yii\log\EmailTarget',
+                 'levels' => ['error', 'warning'],
+                 'message' => [
+                     'to' => ['uutan@qq.com'],
+                     'subject' => 'New caopic.com log message',
+                 ],
+             ],
             ],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
