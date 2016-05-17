@@ -23,7 +23,7 @@ return [
         ],
 
         'oss' => [
-            'class' => 'yiier\AliyunOSS\OSS',
+            'class' => 'common\aliyun\OSS\OSS',
             'accessKeyId' => 'cNzkVIqdOC853bdw', // 阿里云OSS AccessKeyID
             'accessKeySecret' => '9QnCIR7eR31h1g6ANEDHOQJdJsv6mL', // 阿里云OSS AccessKeySecret
             'bucket' => 'utan', // 阿里云的bucket空间
