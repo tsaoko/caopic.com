@@ -55,7 +55,7 @@ class AliyunController extends Controller
 
         // 4.获取回调body
         $body = file_get_contents('php://input');
-        $post = Yii::$app->request->post;
+        $post = Yii::$app->request->post();
 
         // 5.拼接待签名字符串
         $authStr = '';
