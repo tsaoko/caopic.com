@@ -158,7 +158,7 @@ var uploader = new plupload.Uploader({
         { title : "Image files", extensions : "jpg,gif,png,bmp" },
         { title : "mp4 files", extensions : "mp4" }
         ],
-        max_file_size : '20mb', //最大只能上传10mb的文件
+        max_file_size : '1024mb', //最大只能上传10mb的文件
         prevent_duplicates : true //不允许选取重复文件
     },
 

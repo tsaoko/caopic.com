@@ -74,6 +74,9 @@ class AliyunController extends Controller
         $ok = openssl_verify($authStr, $authorization, $pubKey, OPENSSL_ALGO_MD5);
         if ($ok == 1)
         {
+
+            // TODO 使用etag做排重工作存地的时候，删除当前上传的内容
+
             // 写入数据表
             $model = new Resource;
             $model->etag = $post['etag'];

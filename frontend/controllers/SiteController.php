@@ -58,7 +58,7 @@ class SiteController extends Controller
     {
         $oss = \Yii::$app->oss;
         $callbackUrl = Url::to(['/aliyun/oss'],true);
-        $response = $oss->getSignature('user-dir/', $callbackUrl,30);
+        $response = $oss->getSignature('user-dir/', $callbackUrl,300);
         echo $response;
     }
 
