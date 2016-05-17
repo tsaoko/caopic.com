@@ -55,7 +55,7 @@ class AliyunController extends Controller
 
         // 4.获取回调body
         $body = file_get_contents('php://input');
-        Yii::trace(var_export($body,true));
+        $post = Yii::$app->request->post;
 
         // 5.拼接待签名字符串
         $authStr = '';
@@ -74,6 +74,21 @@ class AliyunController extends Controller
         $ok = openssl_verify($authStr, $authorization, $pubKey, OPENSSL_ALGO_MD5);
         if ($ok == 1)
         {
+            // 写入数据表
+            $model = new Resource;
+            $model->etag = $post['etag'];
+            $model->filename = $post['filename'];
+            $model->size = $post['size'];
+            $model->type = $post['mimeType'];
+            $model->name = $post['filename'];
+            $model->provider = 'aliyun';
+            $model->height = $post['height'];
+            $model->width = $post['width'];
+            $model->format = $post['format'];
+            $model->bucket = $post['bucket'];
+            $model->save(false);
+
+
             header("Content-Type: application/json");
             $data = array("Status"=>"Ok");
             echo json_encode($data);
