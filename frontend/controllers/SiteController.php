@@ -105,6 +105,7 @@ class SiteController extends Controller
 
         // 4.获取回调body
         $body = file_get_contents('php://input');
+        Yii::trace(var_export($body,true));
 
         // 5.拼接待签名字符串
         $authStr = '';
