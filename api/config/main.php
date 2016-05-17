@@ -82,6 +82,7 @@ return [
                 'POST v1/site/register' => 'v1/site/register',
 
                 'GET v1/aliyun/signature' => 'v1/aliyun/signature',
+                'POST v1/aliyun/osscallback' => 'v1/aliyun/osscallback',
 
 
 
