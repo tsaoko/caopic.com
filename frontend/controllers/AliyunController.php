@@ -82,8 +82,8 @@ class AliyunController extends Controller
             $model->type = $post['mimeType'];
             $model->name = $post['filename'];
             $model->provider = 'aliyun';
-            $model->height = $post['height'];
-            $model->width = $post['width'];
+            $model->height = intval($post['height']);
+            $model->width = intval($post['width']);
             $model->format = $post['format'];
             $model->bucket = $post['bucket'];
             $model->save(false);
