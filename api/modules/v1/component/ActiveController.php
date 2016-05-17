@@ -18,6 +18,9 @@ use filsh\yii2\oauth2server\filters\auth\CompositeAuth;
 
 class ActiveController extends \yii\rest\ActiveController
 {
+
+    public $allowActions = [];
+
     public $serializer = [
         'class' => 'yii\rest\Serializer',
         'collectionEnvelope' => 'items',
@@ -46,6 +49,13 @@ class ActiveController extends \yii\rest\ActiveController
                 ]
             ],
         ]);
+
+
+        // 过虑不需要权限的控制器
+        if( in_array($this->action->id,$this->allowActions) )
+        {
+            unset($behaviors['authenticator']);
+        }
 
         $behaviors['verbFilter'] = [
             'class' => VerbFilter::className(),

@@ -81,9 +81,9 @@ return [
                 'GET  v1/site/logout' => 'v1/site/logout',
                 'POST v1/site/register' => 'v1/site/register',
 
-                'POST v1/user/invest' => 'v1/user/invest',//投资
-                'POST v1/user/info' => 'v1/user/info',//用户基本信息修改
-                'POST v1/user/mobile' => 'v1/user/mobile',//手机号码修改
+                'GET v1/aliyun/signature' => 'v1/aliyun/signature',
+
+
 
                 'GET,HEAD <module:\w+>/<controller:\w+>/index' => '<module>/<controller>/index',//获取数据
                 'GET,HEAD <module:\w+>/<controller:\w+>/list' => '<module>/<controller>/list',//获取数据列表

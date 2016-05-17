@@ -142,7 +142,7 @@ class OSS extends Component
         $response['callback'] = $base64_callback_body;
         $response['dir'] = $dir;
 
-        return json_encode($response);
+        return $response;
     }
 
 
