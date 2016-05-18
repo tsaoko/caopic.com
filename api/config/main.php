@@ -49,11 +49,68 @@ return [
         ],
 
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'traceLevel' => 3,
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning', 'info'],
+                    'except'=>['api', 'yii\db\*'],
+                ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning', 'info', 'trace'],
+                    'categories'=>['api', 'yii\base\UserException'],
+                    'logFile'=>'@runtime/logs/api.log',
+                ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning', 'info', 'trace'],
+                    'categories'=>['share'],
+                    'logVars'=>['_GET', '_POST', '_SERVER'],
+                    'logFile'=>'@runtime/logs/share.log',
+                ],
+                'email'=>[
+                    'class' => 'yii\log\EmailTarget',
+                    'mailer' => 'mailer',
                     'levels' => ['error'],
+                    'except'=> ['yii\base\UserException', 'yii\web\HttpException:404', 'yii\web\HttpException:400', 'yii\web\HttpException:403', 'common\base\*'],
+                    'message' => [
+                        'from' => ['no-reply@caoguo.com'],
+                        'to' => ['uutan@qq.com'],
+                        'subject' => 'from caopic.com new message',
+                    ],
+                ],
+                [
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['error', 'warning'],
+                    'logVars'=>['_GET', '_POST', '_FILES', '_SESSION'],
+                    'except'=> ['yii\base\UserException', 'yii\web\HttpException:404', 'yii\web\HttpException:400', 'yii\web\HttpException:403', 'common\base\*'],
+                ],
+                [
+                    'class' => 'yii\log\DbTarget',
+                    'categories' => ['admin'],
+                    'logTable' => 'adminlog',
+                    'logVars'=>['_GET', '_POST', '_FILES'],
+                    'prefix'=>function($message){
+                        if (Yii::$app === null) {
+                            return '';
+                        }
+                        $ip = $_SERVER['REMOTE_ADDR'] ? $_SERVER['REMOTE_ADDR'] : '-';
+                        /* @var $user \yii\web\User */
+                        $user = Yii::$app->has('user', true) ? Yii::$app->get('user') : null;
+                        if ($user && ($identity = $user->getIdentity(false))) {
+                            $userID = $identity->getId();
+                        } else {
+                            $userID = '-';
+                        }
+                        if ($user && ($identity = $user->getIdentity(false))) {
+                            $userName = $identity->employee ===null ? $identity->username : $identity->employee->name;
+                        } else {
+                            $userName = '-';
+                        }
+
+                        return "[$ip][$userID][$userName]";
+                    }
                 ],
             ],
         ],
