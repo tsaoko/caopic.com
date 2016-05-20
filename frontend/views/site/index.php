@@ -1,4 +1,6 @@
 <?php
+use yii\widgets\ActiveForm;
+
 /* @var $this yii\web\View */
 $this->title = Yii::$app->name.' - '.Yii::$app->params['slogo'];
 
@@ -9,3 +11,14 @@ $this->registerJsFile('/upload.js');
 <p>
     弄个完整表单做分享
 </p>
+
+<?php $form = ActiveForm::begin(['id' => 'share-form']); ?>
+<?= $form->field($model, 'title', [
+    'options'=>['class'=>'']
+])->textInput(); ?>
+
+<?= $form->field($model, 'desc', [
+    'options'=>['class'=>'']
+])->textArea(); ?>
+
+<?php ActiveForm::end();?>

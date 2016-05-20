@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\helpers\Url;
 use common\helpers\UtilHelper;
 use common\models\Resource;
+use frontend\models\ShareForm;
 
 /**
  * Site controller
@@ -34,9 +35,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $model = new ShareForm;
 
+        
 
-        return $this->render('index');
+        $data['model'] = $model;
+
+        return $this->render('index',$data);
     }
 
 
