@@ -7,8 +7,9 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '用户头像管理  &nbsp; '.Html::a('<i class="fa fa-edit"></i> 新增', ['create'],['class'=>'btn btn-success']);
+$this->title = '用户头像管理';
 $this->params['breadcrumbs'][] = '用户头像管理';
+$this->params['smallTitle'] = Html::a('<i class="fa fa-edit"></i> 新增', ['create'],['class'=>'btn btn-success']);
 ?>
 
 <div class="user-avatar-index box box-success">

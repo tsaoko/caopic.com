@@ -53,7 +53,7 @@ class Share extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => 'User ID',
+            'user_id' => '用户ID',
             'title' => '标题',
             'resource_id' => '资源ID',
             'desc' => '描述',
@@ -61,7 +61,7 @@ class Share extends \yii\db\ActiveRecord
             'site_id' => '来源站关联',
             'created_at' => '采集时间',
             'updated_at' => '更新时间 ',
-            'level' => '分级,级别越高，越要求权限',
+            'level' => '分级',
             'user_share_group_id' => '用户分组',
         ];
     }

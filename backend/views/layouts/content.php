@@ -18,6 +18,7 @@ use dmstr\widgets\Alert;
                     );
                     echo ($this->context->module->id !== \Yii::$app->id) ? '<small>Module</small>' : '';
                 } ?>
+                <?php echo isset($this->params['smallTitle']) ? $this->params['smallTitle'] : ''; ?>
             </h1>
         <?php } ?>
 

@@ -9,18 +9,10 @@ use yii\grid\GridView;
 
 $this->title = '分享小组管理';
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['smallTitle'] = Html::a('<i class="fa fa-edit"></i> 新增', ['create'],['class'=>'btn btn-success']);
 ?>
 
 <div class="share-group-index box box-success">
-<div class="box-header with-border">
-
-    <?php echo Html::a('<i class="fa fa-edit"></i> 新增', ['create'],['class'=>'btn btn-success']); ?>
-
-    <div class="box-tools pull-right">
-        <?php echo Html::a('<i class="fa fa-search"></i> 高级搜索', '#',['class'=>'btn']) ?>
-    </div>
-</div>
-
         <div class="box-body">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -33,12 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'user_id',
             'name',
             'sort',
-            'desciption:ntext',
-            // 'created_at',
+            //'desciption:ntext',
+            'created_at:datetime',
             // 'updated_at',
             // 'image',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn','template' => '{view} &nbsp; &nbsp; {update}'],
         ],
     ]); ?>
 
