@@ -34,17 +34,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $oss = \Yii::$app->oss;
-        $fh = Yii::getAlias('@frontend/web/1.pptx');
-
-        // 上传一个文件
-        //$oss->upload('1.pptx', $fh); // 上传一个文件
-
-        // 删除一个文件
-        //$oss->delete('index.php');
-
-        // 获取100个文件名
-        // $files = $oss->getAllObject();
 
 
         return $this->render('index');
