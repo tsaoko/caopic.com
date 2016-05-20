@@ -23,21 +23,13 @@ use <?= $generator->indexWidgetType === 'grid' ? "yii\\grid\\GridView" : "yii\\w
 
 $this->title = '<?php echo $model->modelName ?>管理';
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['smallTitle'] = Html::a('<i class="fa fa-edit"></i> 新增', ['create'],['class'=>'btn btn-success']);
 ?>
 <?php if(!empty($generator->searchModelClass)): ?>
     <?= "<?php " ?> echo $this->render('_search', ['model' => $searchModel]); ?>
 <?php endif; ?>
 
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-index box box-success">
-<div class="box-header with-border">
-
-    <?php echo "<?php"; ?> echo Html::a('<i class="fa fa-edit"></i> 新增', ['create'],['class'=>'btn btn-success']); ?>
-
-    <div class="box-tools pull-right">
-        <?php echo "<?php"; ?> echo Html::a('<i class="fa fa-search"></i> 高级搜索', '#',['class'=>'btn']) ?>
-    </div>
-</div>
-
         <div class="box-body">
 <?php if ($generator->indexWidgetType === 'grid'): ?>
     <?= "<?= " ?>GridView::widget([
