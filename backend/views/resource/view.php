@@ -15,13 +15,6 @@ $this->params['breadcrumbs'][] = '资源详情';
     <div class="box-header">
             <h5 class="box-title">资源详情</h5>
             <div class="box-tools pull-right">
-                <?= Html::a('<i class="fa fa-edit"></i> 修改', ['update', 'id' => $model->id]) ?>
-                <?= Html::a('<i class="fa fa-trash-o"></i> 删除', ['delete', 'id' => $model->id], [
-                    'data' => [
-                        'confirm' => '您确定要删除这个项目吗？',
-                        'method' => 'post',
-                    ]
-                ]) ?>
                 <a class="close-link" href="<?=  Url::toRoute(['index']) ?>">
                     <i class="fa fa-undo"></i> 返回
                 </a>
