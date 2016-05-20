@@ -19,9 +19,13 @@ class ResourceController extends Controller
      */
     public function actionIndex()
     {
+        $query = Resource::find();
+
         $dataProvider = new ActiveDataProvider([
-            'query' => Resource::find(),
+            'query' => $query,
         ]);
+
+        $query->orderBy(['id'=>SORT_DESC]);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
