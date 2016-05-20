@@ -12,15 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="resource-index box box-success">
-<div class="box-header with-border">
-
-    <?php echo Html::a('<i class="fa fa-edit"></i> 新增', ['create'],['class'=>'btn btn-success']); ?>
-
-    <div class="box-tools pull-right">
-        <?php echo Html::a('<i class="fa fa-search"></i> 高级搜索', '#',['class'=>'btn']) ?>
-    </div>
-</div>
-
         <div class="box-body">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -34,9 +25,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'filename',
             'size',
-            // 'type',
+            'type',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn','template' => ' {view} &nbsp; &nbsp; {update}'],
         ],
     ]); ?>
 
